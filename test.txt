@@ -1,3 +1,5 @@
+ex00
+-------------------------
 Current:
     check canonical form function with cpp02 : done
 Pending:
@@ -9,3 +11,10 @@ Tests:
         + stop reducing hitting points if HitPoints is 0
     be repaired 
         + repair only if HitPoints is greater than 0 --> try to repair when HitPoints have been depleted
+-------------------------
+
+ex001
+-------------------------
+    why do they ask me to update clpatrap definition if i can overload in my new class definition
+    how would the naming work?
+-------------------------
