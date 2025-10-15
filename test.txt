@@ -1,0 +1,11 @@
+Current:
+    check canonical form function with cpp02 : done
+Pending:
+    verify notation of _
+Tests:
+    attack
+        + attack given string, take away energy point -> loop to proove
+    take damage
+        + stop reducing hitting points if HitPoints is 0
+    be repaired 
+        + repair only if HitPoints is greater than 0 --> try to repair when HitPoints have been depleted

@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : Name("nameless"), HitPoints(10), EnergyPoints(10),
+	AttackDamage(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 	return ;
@@ -41,34 +42,53 @@ ClapTrap::~ClapTrap(void)
 /***************** Required member functions*****************/
 void ClapTrap::attack(const std::string &target)
 {
-	if (this->HitPoints != 0 || this->EnergyPoints != 0)
+	if (this->HitPoints > 0 && this->EnergyPoints > 0)
 	{
-		//target->takeDamage();
-        this->EnergyPoints -= 1;
-        std::cout << "ClapTrap " << this->Name << " attacks " << target << ", causing " << this->AttackDamage << " points of damage!" << std::endl;
+		this->EnergyPoints -= 1;
+		std::cout << "ClapTrap " << this->Name << " attacks " << target << ", causing " << this->AttackDamage << " points of damage!" << std::endl;
 	}
+	else
+		std::cout << "ClapTrap " << this->Name << "cannot attack because it does not have enough points" << std::endl;
 }
-//how can it make its target loose energy points if it has only -> getinstance by name
+
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    this->HitPoints -= amount;
-    std::cout << "ClapTrap " << this->Name << " is taking a dmamage of" <<  amount << "hit points" << std::endl;
+	if (this->HitPoints >= amount)
+		this->HitPoints -= amount;
+	else if (this->HitPoints > 0)
+		this->HitPoints = 0;
+	else
+	{
+		std::cout << "ClapTrap " << this->Name << " is already dead, stap !" << std::endl;
+		return ;
+	}
+	std::cout << "ClapTrap " << this->Name << " is taking a damage of " << amount << " hit points, now it has " << this->HitPoints << " hit points." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->HitPoints != 0 || this->EnergyPoints != 0)
-    {
-        this->EnergyPoints -= 1;
-        this->EnergyPoints += amount;  
-        std::cout << "ClapTrap " << this->Name << " is being repaired by " << amount << " energy points." << std::endl;
+	if (this->HitPoints > 0 && this->EnergyPoints > 0)
+	{
+		this->EnergyPoints -= 1;
+		this->HitPoints += amount;
+		std::cout << "ClapTrap " << this->Name << " is being repaired, it now has " << this->HitPoints << " hit points." << std::endl;
 	}
-
+	else
+		std::cout << "ClapTrap " << this->Name << " cannot be repaired because it does not have enough points " << std::endl;
 }
 
-/***************** Required member functions*****************/
+/***************** Getters *****************/
 
 std::string ClapTrap::getName(void)
 {
-    return (this->Name);
+	return (this->Name);
+}
+
+unsigned int ClapTrap::getHitPoints(void)
+{
+	return (this->HitPoints);
+}
+unsigned int ClapTrap::getEnergyPoints(void)
+{
+	return (this->EnergyPoints);
 }
