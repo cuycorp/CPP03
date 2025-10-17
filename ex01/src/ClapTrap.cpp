@@ -3,14 +3,14 @@
 ClapTrap::ClapTrap(void) : Name("nameless"), HitPoints(10), EnergyPoints(10),
 	AttackDamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 	return ;
 }
 
 ClapTrap::ClapTrap(std::string inName) : Name(inName), HitPoints(10),
 	EnergyPoints(10), AttackDamage(0)
 {
-	std::cout << "Default constructor called with initialization" << std::endl;
+	std::cout << "ClapTrap default constructor called with initialization" << std::endl;
 	return ;
 }
 
@@ -35,7 +35,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 	return ;
 }
 
