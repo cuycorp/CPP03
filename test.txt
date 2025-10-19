@@ -18,3 +18,9 @@ ex001
     why do they ask me to update clpatrap definition if i can overload in my new class definition
     how would the naming work?
 -------------------------
+
+ex002
+-------------------------
+use of virtual : 
+i.e. virtual ~FragTrap();
+-------------------------
