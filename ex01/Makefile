@@ -7,7 +7,7 @@ IFLAGS = -I include
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic ${IFLAGS}
 #Source files
 
-SRCS = src/main.cpp  src/ClapTrap.cpp
+SRCS = src/main.cpp  src/ClapTrap.cpp src/ScavTrap.cpp
 
 #Object file
 

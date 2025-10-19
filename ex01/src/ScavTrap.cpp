@@ -8,15 +8,17 @@ ScavTrap::ScavTrap(void)
 	this->HitPoints = 100;
     this->EnergyPoints = 50;
     this->AttackDamage = 20;
+	this->guardsGate = false;
     return ;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap default constructor called with name" <<  << std::endl;
+	std::cout << "ScavTrap default constructor called with name " << name << std::endl;
 	this->HitPoints = 100;
     this->EnergyPoints = 50;
     this->AttackDamage = 20;
+	this->guardsGate = false;
     return ;
 }
 
@@ -24,16 +26,22 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 ScavTrap::ScavTrap(const ScavTrap &other)
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
-	(void)other;
-    //should I overwrite the new valued of parameters here 
-	return ;
+	*this = other;
 }
 
 // Assignment operator overload
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
 	std::cout << "ScavTrap assignment operator called" << std::endl;
-	(void)other;
+		std::cout << "Assignment operator called" << std::endl;
+	if (this != &other)
+	{
+		this->setName(other.getName());
+		this->HitPoints = other.HitPoints;
+		this->EnergyPoints = other.EnergyPoints;
+		this->AttackDamage = other.AttackDamage;
+		this->guardsGate = false;
+	}
 	return (*this);
 }
 
@@ -46,5 +54,11 @@ ScavTrap::~ScavTrap(void)
 
 void ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << this->getName() << "is now in gate keeper mode" << std::endl;
+	if (this->guardsGate == false)
+	{
+		this->guardsGate = true;
+		std::cout << "ScavTrap " << this->getName() << " is now in gate keeper mode" << std::endl;
+	}
+	else
+		std::cout << "ScavTrap " << this->getName() << " is already in gate keeper mode" << std::endl;
 }

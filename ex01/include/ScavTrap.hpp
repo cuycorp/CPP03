@@ -6,6 +6,9 @@
 
 class ScavTrap : public ClapTrap
 {
+    private: 
+        bool guardsGate;
+
     public:
         ScavTrap(void);
         ScavTrap(std::string name);

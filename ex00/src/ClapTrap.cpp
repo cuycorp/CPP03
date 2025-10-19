@@ -48,7 +48,7 @@ void ClapTrap::attack(const std::string &target)
 		std::cout << "ClapTrap " << this->Name << " attacks " << target << ", causing " << this->AttackDamage << " points of damage!" << std::endl;
 	}
 	else
-		std::cout << "ClapTrap " << this->Name << "cannot attack because it does not have enough points" << std::endl;
+		std::cout << "ClapTrap " << this->Name << " cannot attack because it does not have enough points" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -79,16 +79,22 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 /***************** Getters *****************/
 
-std::string ClapTrap::getName(void)
+std::string ClapTrap::getName(void) const
 {
 	return (this->Name);
 }
 
-unsigned int ClapTrap::getHitPoints(void)
+unsigned int ClapTrap::getHitPoints(void) const
 {
 	return (this->HitPoints);
 }
-unsigned int ClapTrap::getEnergyPoints(void)
+unsigned int ClapTrap::getEnergyPoints(void) const
 {
 	return (this->EnergyPoints);
+}
+
+/***************** Setters *****************/
+void ClapTrap::setName(std::string newName)
+{
+	this->Name = newName;
 }
