@@ -23,7 +23,7 @@ int main()
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
 	}
 
-	std::cout << "\n\n### TESTING SCAVTRAP ###\n" << std::endl;
+	std::cout << "\n\n### TESTING FRAGTRAP ###\n" << std::endl;
 	{
 		std::cout << "\033[34mConstructing\033[0m" << std::endl;
 		FragTrap c;

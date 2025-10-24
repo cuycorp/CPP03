@@ -3,7 +3,7 @@
 
 int main()
 {
-    ClapTrap instanceOne("la_ptmr");
+    ClapTrap instanceOne("tmr");
     ClapTrap instanceTwo(instanceOne);
     ClapTrap instanceThree;
     ClapTrap a;

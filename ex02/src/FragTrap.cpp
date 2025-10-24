@@ -52,5 +52,6 @@ FragTrap::~FragTrap(void)
 void FragTrap::highFivesGuys(void)
 {
     std::cout << "FragTrap " << this->getName() << " says: \"Give me a high five!\" 🖐️" << std::endl;
-	
+	if (this->highFiveRequest == false)
+		this->highFiveRequest = true;
 }

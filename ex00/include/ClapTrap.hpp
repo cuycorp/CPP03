@@ -24,6 +24,8 @@ class ClapTrap
         std::string getName(void) const;
         unsigned int getHitPoints(void) const;
         unsigned int getEnergyPoints(void) const;
+        //Setter
+        void setName(std::string newName);
 };
 
 #endif
